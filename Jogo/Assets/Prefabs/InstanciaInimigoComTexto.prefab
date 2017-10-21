@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4564555360212918}
+  - component: {fileID: 114019353489555634}
   m_Layer: 0
   m_Name: InstanciaInimigoComTexto
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1106620143026070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.011885, y: -3.4156733, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224152405164917890}
@@ -210,6 +211,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114019353489555634
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106620143026070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cca5805a43ad8044be78e5457a5c8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  palavraObjeto: {fileID: 114767950550032528}
+  palavra: 
+  posicao: 0
+  foco: 0
+  f: {fileID: 0}
+  p: {fileID: 0}
 --- !u!114 &114096529626871206
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1787852287958542}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05f90e14a42f3a4b850de763cca336a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a6a728737c176a4da34059448c9c6f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   palavra: 
@@ -289,13 +307,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 100
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Inimigo
 --- !u!114 &114873444728366848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -456,6 +474,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.487366, y: -0.09681463}
-  m_SizeDelta: {x: 4.981, y: 1.399}
+  m_AnchoredPosition: {x: -1.167, y: 0.358}
+  m_SizeDelta: {x: 9.413, y: 1.745}
   m_Pivot: {x: 0.52363676, y: 1.313576}
