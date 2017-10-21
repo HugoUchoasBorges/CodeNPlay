@@ -11,6 +11,11 @@ public class Nave : MonoBehaviour {
     private float _entradaParaImpulso;
     private float _entradaParaRotacao;
 
+    public float topoDaTela;
+    public float baseDaTela;
+    public float bordaEsquerdaDaTela;
+    public float bordaDireitaDaTela;
+
     // Use this for initialization
     void Start () {
 		
@@ -21,6 +26,27 @@ public class Nave : MonoBehaviour {
 
         _entradaParaImpulso = Input.GetAxis("Vertical");
         _entradaParaRotacao = Input.GetAxis("Horizontal");
+
+        Vector2 novaPosicao = transform.position;
+
+        if (transform.position.y > topoDaTela)
+        {
+            novaPosicao.y = baseDaTela;
+        }
+        if (transform.position.y < baseDaTela)
+        {
+            novaPosicao.y = topoDaTela;
+        }
+        if (transform.position.x > bordaDireitaDaTela)
+        {
+            novaPosicao.x = bordaEsquerdaDaTela;
+        }
+        if (transform.position.x < bordaEsquerdaDaTela)
+        {
+            novaPosicao.x = bordaDireitaDaTela;
+        }
+
+        transform.position = novaPosicao;
 
         //GetComponent<Transform>().position += Vector3.right * movimentoHorizontal * velocidadeDeMovimento * Time.deltaTime;
         //float xAtual = transform.position.x;
