@@ -25,7 +25,7 @@ public class Palavras : MonoBehaviour {
 	};
 
 	public string RetornaPalavra(){
-		int i = 0;
+		//int i = 0;
 		string palavra;
 
 		while (true) {

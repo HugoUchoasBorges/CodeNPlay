@@ -96,13 +96,15 @@ public class Nave : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        
+
         /*lives--;
         lives_text.text = "Lives: " + lives;
         if (lives <= 0)
         {
             GameOver();
         }*/
+
+        CaracteristicasDoJogo.totalVidas--;
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
@@ -118,7 +120,8 @@ public class Nave : MonoBehaviour {
     void fimDeJogo()
     {
         CancelInvoke("reviver");
-        game_over_panel.SetActive(true);
+        //game_over_panel.SetActive(true);
+        Debug.Log("JOGADOR MORREU  !!! ");
     }
 
 }

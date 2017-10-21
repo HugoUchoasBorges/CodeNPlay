@@ -35,7 +35,7 @@ public class Digitacao : MonoBehaviour {
 					foco = true;
 				}
 
-				Debug.Log ("KeyCode down: " + kcode);
+				//Debug.Log ("KeyCode down: " + kcode);
 				posicao++;
 				palavraObjeto.text = palavra.Substring (posicao);
 			}
