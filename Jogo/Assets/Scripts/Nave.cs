@@ -17,10 +17,14 @@ public class Nave : MonoBehaviour {
     public static float bordaDireitaDaTela;
 
 
-	public int quantidadeDeVidas = 3;
+
+    public Color corInvencibilidade;
+    public Color corNormal;
+
+    public GameObject game_over_panel;
 
     // Use this for initialization
-    void Start () {
+    void Start() {
 
         topoDaTela = 6.18f;
         baseDaTela = -6.18f;
@@ -33,9 +37,9 @@ public class Nave : MonoBehaviour {
         rigidBody2D.drag = 0.3f;
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         _entradaParaImpulso = Input.GetAxis("Vertical");
         _entradaParaRotacao = Input.GetAxis("Horizontal");
@@ -61,7 +65,7 @@ public class Nave : MonoBehaviour {
 
         transform.position = novaPosicao;
 
-        
+
 
     }
 
@@ -72,15 +76,52 @@ public class Nave : MonoBehaviour {
 
     }
 
-	void OnCollisionEnter2D(Collision2D collision){
+    void reviver()
+    {
+        rigidBody2D.velocity = Vector2.zero;
+        transform.position = Vector2.zero;
 
-		if (quantidadeDeVidas != 0) {
-			quantidadeDeVidas--;
-		} else {
-			Destroy (this.gameObject);
-		}
-	}
+        SpriteRenderer renderizadorDeSprite = GetComponent<SpriteRenderer>();
+        renderizadorDeSprite.enabled = true;
+        renderizadorDeSprite.color = corInvencibilidade;
+        Invoke("vulneravel", 3f);
+    }
+
+    void vulneravel()
+    {
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = corNormal;
+    }
 
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        
+        /*lives--;
+        lives_text.text = "Lives: " + lives;
+        if (lives <= 0)
+        {
+            GameOver();
+        }*/
+
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+
+        Invoke("reviver", 2f);
+        if (CaracteristicasDoJogo.totalVidas <= 0)
+        {
+            fimDeJogo();
+        }
+        
+    }
+
+    void fimDeJogo()
+    {
+        CancelInvoke("reviver");
+        game_over_panel.SetActive(true);
+    }
 
 }
+
+
+
