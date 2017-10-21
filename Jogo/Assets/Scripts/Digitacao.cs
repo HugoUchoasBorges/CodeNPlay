@@ -10,6 +10,7 @@ public class Digitacao : MonoBehaviour {
 	public int posicao;
 	public bool foco;
 	public Foco f;
+    CaracteristicasDoJogo cj;
 
 	public Palavras p;
 
@@ -20,48 +21,53 @@ public class Digitacao : MonoBehaviour {
 		p = GameObject.FindObjectOfType<Palavras> ();
 		palavraObjeto.text = p.RetornaPalavra ();
 		palavra = palavraObjeto.text;
-	}
+        cj = GameObject.FindObjectOfType<CaracteristicasDoJogo>();
+    }
 
-	// Update is called once per frame
-	void Update () {
-		if (!foco && f.possuiFoco) {
-			return;
-		}
+    void Update()
+    {
+        if (!foco && f.possuiFoco)
+        {
+            return;
+        }
 
-		foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode))) {
-			if (Input.GetKeyDown (kcode) && kcode.ToString ().Equals(palavra[posicao].ToString ())) {
-				if (posicao == 0 && !f.possuiFoco) {
-					f.possuiFoco = true;
-					foco = true;
-				}
+        if (Input.anyKeyDown)
+        {
+            if (Input.inputString.Equals(palavra[posicao].ToString()))
+            {
+                if (posicao == 0 && !f.possuiFoco)
+                {
+                    f.possuiFoco = true;
+                    foco = true;
+                }
+                
+                posicao++;
+                palavraObjeto.text = palavra.Substring(posicao);
+            }
 
-				//Debug.Log ("KeyCode down: " + kcode);
-				posicao++;
-				palavraObjeto.text = palavra.Substring (posicao);
-			}
-				
-		}
 
-		if (posicao > 0) {
-			palavraObjeto.color = Color.red;
-		}
 
-		if (posicao == palavra.Length) {
-			palavraObjeto.text = "destruiu";
-			Invoke ("liberarFoco", 0.1f);
+            if (posicao > 0)
+            {
+                palavraObjeto.color = Color.red;
+            }
 
-			//libera a palavra assim que um inimigo é destruido
-			//p.liberaPalavra(palavra[palavra.Length]); 
+            if (posicao == palavra.Length)
+            {
+                palavraObjeto.text = "destruiu";
+                Invoke("liberarFoco", 0.1f);
 
-		}
-			
-	}
+            }
+        }
 
-	void liberarFoco(){
+
+    }
+
+    void liberarFoco(){
 		f.possuiFoco = false;
 		foco = false;
-		Debug.Log (foco);
-		Destroy (this.gameObject);
+        cj.atualizarPontuacao(palavra.Length * 100);
+        Destroy (this.gameObject);
 	}
 		
 }
