@@ -23,19 +23,18 @@ public class Palavras : MonoBehaviour {
 		"conta", "juros", "cobrança", "iptu", "fracasso"
 	};
 
-	public string RetornaPalavra(string[] listaDePalavra, int quantidadePalavrasGeradas, string[] listaProibida){
+	public string[] RetornaPalavra(string[] listaDePalavra, int quantidadePalavrasGeradas, string[] listaProibida){
 		quantidadeDePalavras = quantidadePalavrasGeradas;
-		Random rnd = new Random ();
-		int i;
+		int i = 0;
 		string palavra;
 
 		while (i < quantidadePalavrasGeradas) {
-			int numeroAleatorio = rnd.Next (1, 30);
+			int numeroAleatorio = Random.Range(0, 30);
 
-			palavra = listaDePalavra [rnd];
+			palavra = listaDePalavra [numeroAleatorio];
 
 			for (int j = 0; j < listaProibida.Length; j++) {
-				if (palavra.StartsWith == listaProibida [j].StartsWith) {
+				if (palavra[0] == listaProibida[j][0]) {
 					break;
 				}
 				else if(j == (listaProibida.Length - 1)){
@@ -46,6 +45,6 @@ public class Palavras : MonoBehaviour {
 		}
 
 		return vetorFinalDePalavras;
-	}
+	} 
 
 }
