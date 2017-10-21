@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Palavras : MonoBehaviour {
 
-	public int quantidadeDePalavras;
+	public int quantidadeDePalavras = 3; //temporariamente 3, mas ela é a quantidade da 
 	public string[] vetorFinalDePalavras;
 	public ArrayList listaLetraProibida = new ArrayList();
 
@@ -24,30 +24,30 @@ public class Palavras : MonoBehaviour {
 		"conta", "juros", "cobrança", "iptu", "fracasso"
 	};
 
-	public string[] RetornaPalavra(string[] listaDePalavra, int quantidadePalavrasGeradas){
-		quantidadeDePalavras = quantidadePalavrasGeradas;
+	public string RetornaPalavra(){
 		int i = 0;
 		string palavra;
 
-		while (i < quantidadePalavrasGeradas) {
-			int numeroAleatorio = Random.Range(0, 30);
+		while (true) {
+			int numeroAleatorio = Random.Range (0, 30);
+			palavra = palavrasRuins [numeroAleatorio];
 
-			palavra = listaDePalavra [numeroAleatorio];
-
-			for (int j = 0; j < listaLetraProibida.Count; j++) {
-				if (listaLetraProibida.Contains(palavra[0])){
-					break;
+			if (listaLetraProibida.Count == 0) {
+				listaLetraProibida.Add (palavra [0]);
+				return palavra.ToUpper();
+			} else {
+				if (listaLetraProibida.Contains (palavra [0])) {
+					continue;
 				}
-				else if(j == (listaLetraProibida.Count - 1)){
-					vetorFinalDePalavras [i] = palavra;
-					listaLetraProibida.Add (palavra[0]);
-					i++;
-				}			
+
+				listaLetraProibida.Add (palavra [0]);
+				return palavra.ToUpper();
 			}
 		}
+	}
+		 
 
-		return vetorFinalDePalavras;
-	} 
+
 
 	public void liberaPalavra(char letra){
 		for (int i = 0; i < listaLetraProibida.Count; i++) {

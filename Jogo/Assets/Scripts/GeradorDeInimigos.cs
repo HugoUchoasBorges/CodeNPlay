@@ -12,8 +12,7 @@ public class GeradorDeInimigos : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        InstanciarInimigos(4);
-        
+		InstanciarInimigos(3);
 	}
 	
 	void InstanciarInimigos(int totalInimigos)
