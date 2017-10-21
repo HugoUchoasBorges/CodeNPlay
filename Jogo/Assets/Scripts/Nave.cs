@@ -16,6 +16,9 @@ public class Nave : MonoBehaviour {
     public float bordaEsquerdaDaTela;
     public float bordaDireitaDaTela;
 
+
+	public int quantidadeDeVidas = 3;
+
     // Use this for initialization
     void Start () {
 		
@@ -62,6 +65,14 @@ public class Nave : MonoBehaviour {
 
     }
 
+	void OnCollisionEnter2D(Collision2D collision){
+
+		if (quantidadeDeVidas != 0) {
+			quantidadeDeVidas--;
+		} else {
+			Destroy (this.gameObject);
+		}
+	}
 
 
 
