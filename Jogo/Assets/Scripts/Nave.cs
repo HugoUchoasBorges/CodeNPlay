@@ -23,7 +23,7 @@ public class Nave : MonoBehaviour {
         baseDaTela = -6.18f;
         bordaEsquerdaDaTela = -10.67f;
         bordaDireitaDaTela = 10.67f;
-        impulso = 60;
+        impulso = 100;
         impulsoDeRotacao = 20;
 
         rigidBody2D.angularDrag = 0.8f;
