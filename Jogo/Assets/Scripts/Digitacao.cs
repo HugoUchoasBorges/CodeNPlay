@@ -16,9 +16,10 @@ public class Digitacao : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		posicao = 0;
-		palavra = palavraObjeto.text;
 		f = GameObject.FindObjectOfType<Foco> ();
 		p = GameObject.FindObjectOfType<Palavras> ();
+		palavraObjeto.text = p.RetornaPalavra ();
+		palavra = palavraObjeto.text;
 	}
 
 	// Update is called once per frame
@@ -29,12 +30,12 @@ public class Digitacao : MonoBehaviour {
 
 		foreach (KeyCode kcode in System.Enum.GetValues(typeof(KeyCode))) {
 			if (Input.GetKeyDown (kcode) && kcode.ToString ().Equals(palavra[posicao].ToString ())) {
-				if (posicao == 0 && !f.possuiFoco && !foco) {
+				if (posicao == 0 && !f.possuiFoco) {
 					f.possuiFoco = true;
 					foco = true;
 				}
 
-				Debug.Log ("KeyCode down: " + kcode);
+				//Debug.Log ("KeyCode down: " + kcode);
 				posicao++;
 				palavraObjeto.text = palavra.Substring (posicao);
 			}
@@ -47,10 +48,11 @@ public class Digitacao : MonoBehaviour {
 
 		if (posicao == palavra.Length) {
 			palavraObjeto.text = "destruiu";
-			Invoke ("liberarFoco", 1f);
+			Invoke ("liberarFoco", 0.1f);
 
 			//libera a palavra assim que um inimigo é destruido
-			p.liberaPalavra(palavra[palavra.Length]); 
+			//p.liberaPalavra(palavra[palavra.Length]); 
+
 		}
 			
 	}
@@ -58,6 +60,8 @@ public class Digitacao : MonoBehaviour {
 	void liberarFoco(){
 		f.possuiFoco = false;
 		foco = false;
+		Debug.Log (foco);
+		Destroy (this.gameObject);
 	}
 		
 }

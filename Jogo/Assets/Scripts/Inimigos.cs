@@ -67,6 +67,26 @@ public class Inimigos : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D colisao)
     {
+
+        Vector2 normal = colisao.contacts[0].normal;
+        Inimigos inimigo = colisao.transform.GetComponent<Inimigos>();
+        
+        Nave nave = colisao.transform.GetComponent<Nave>();
+
+
+        if (inimigo != null)
+        {
+            //print("Colisão entre inimigos");
+            //GetComponent<Collider2D>().isTrigger = true;
+            
+        }
+        if(nave != null)
+        {
+            //print("Colisão entre Player");
+            //GetComponent<Collider2D>().isTrigger = true;
+            
+            //Game Over
+        }
         
         //Destroy(this.gameObject);
         pontuacao += 10;

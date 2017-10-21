@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 212173186082890576}
   - component: {fileID: 61084258918340982}
   - component: {fileID: 50604595609253622}
+  - component: {fileID: 114343307853826600}
   m_Layer: 0
   m_Name: Nave
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595418188597014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.601, y: -1.628, z: 0}
+  m_LocalPosition: {x: 0.25, y: -3.66, z: 0}
   m_LocalScale: {x: 0.6132859, y: 0.6132859, z: 0.6132859}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,8 +55,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.3
+  m_AngularDrag: 0.8
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -87,6 +88,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0374523, y: 1.1462176}
   m_EdgeRadius: 0
+--- !u!114 &114343307853826600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1595418188597014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1fdbedd35f049e4b938e3e241797c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigidBody2D: {fileID: 50604595609253622}
+  impulso: 60
+  impulsoDeRotacao: 20
 --- !u!212 &212173186082890576
 SpriteRenderer:
   m_ObjectHideFlags: 1
