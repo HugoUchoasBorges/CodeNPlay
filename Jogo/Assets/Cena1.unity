@@ -253,6 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1037583374}
   - component: {fileID: 1037583373}
+  - component: {fileID: 1037583375}
   m_Layer: 0
   m_Name: Inimigo_externo
   m_TagString: Untagged
@@ -316,6 +317,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1037583375
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1037583372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4f2be56d693ca17489894f5fe65e3e19, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1094435733
 GameObject:
   m_ObjectHideFlags: 0
