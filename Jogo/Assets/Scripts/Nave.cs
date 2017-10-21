@@ -58,10 +58,7 @@ public class Nave : MonoBehaviour {
 
         transform.position = novaPosicao;
 
-        //GetComponent<Transform>().position += Vector3.right * movimentoHorizontal * velocidadeDeMovimento * Time.deltaTime;
-        //float xAtual = transform.position.x;
-        //xAtual = Mathf.Clamp(xAtual, -limiteEmX, limiteEmX);
-        //transform.position = new Vector3(xAtual, transform.position.y, transform.position.z);
+        
 
     }
 
