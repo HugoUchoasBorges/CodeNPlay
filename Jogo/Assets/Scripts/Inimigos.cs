@@ -21,8 +21,6 @@ public class Inimigos : MonoBehaviour
     public float bordaEsquerdaDaTela;
     public float bordaDireitaDaTela;
 
-    public Text textoInimigo;
-
     // Use this for initialization
     void Start()
     { 
@@ -40,18 +38,12 @@ public class Inimigos : MonoBehaviour
         rotacaoMaxima = 200;
 
 
-        textoInimigo.transform.eulerAngles = Vector3.zero;
-        //textoInimigo.transform.rotation.z = 0;
-
-
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Vector2 posicaoTextoInimigo = textoInimigo.transform.position;
         Vector2 novaPosicao = transform.position;
 
         if (transform.position.y > topoDaTela)
@@ -71,17 +63,7 @@ public class Inimigos : MonoBehaviour
             novaPosicao.x = bordaDireitaDaTela;
         }
 
-        //Vector2 posicaoTexto = transform.position;
-
         transform.position = novaPosicao;
-
-        //posicaoTextoInimigo = novaPosicao * 20f;
-
-        textoInimigo.transform.position = novaPosicao;
-        
-        //posicaoTextoInimigo.x = novaPosicao.x * 20f;
-        //posicaoTextoInimigo.y = novaPosicao.y * 20f;
-        //textoInimigo.transform.position = novaPosicao * 20.71f;
 
     }
 

@@ -13,7 +13,8 @@ public class Texto : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = transformInimigo.position;
+        if(transformInimigo != null)
+            transform.position = transformInimigo.position;
 
     }
 }
