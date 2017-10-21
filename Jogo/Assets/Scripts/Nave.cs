@@ -18,8 +18,18 @@ public class Nave : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+        topoDaTela = 6.18f;
+        baseDaTela = -6.18f;
+        bordaEsquerdaDaTela = -10.67f;
+        bordaDireitaDaTela = 10.67f;
+        impulso = 60;
+        impulsoDeRotacao = 20;
+
+        rigidBody2D.angularDrag = 0.8f;
+        rigidBody2D.drag = 0.3f;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
