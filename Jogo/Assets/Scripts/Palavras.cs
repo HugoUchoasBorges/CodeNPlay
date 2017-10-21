@@ -29,7 +29,7 @@ public class Palavras : MonoBehaviour {
 		int i;
 		string palavra;
 
-		while (i < quantidadeDePalavrasGeradas) {
+		while (i < quantidadePalavrasGeradas) {
 			int numeroAleatorio = rnd.Next (1, 30);
 
 			palavra = listaDePalavra [rnd];
