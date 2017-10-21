@@ -12,6 +12,7 @@ public class Digitacao : MonoBehaviour {
 	public Foco f;
 
 	public Palavras p;
+	public CaracteristicasDoJogo cj;
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +21,7 @@ public class Digitacao : MonoBehaviour {
 		p = GameObject.FindObjectOfType<Palavras> ();
 		palavraObjeto.text = p.RetornaPalavra ();
 		palavra = palavraObjeto.text;
+		cj = GameObject.FindObjectOfType<CaracteristicasDoJogo>();
 	}
 
 	// Update is called once per frame
@@ -51,7 +53,7 @@ public class Digitacao : MonoBehaviour {
 			Invoke ("liberarFoco", 0.1f);
 
 			//libera a palavra assim que um inimigo é destruido
-			//p.liberaPalavra(palavra[palavra.Length]); 
+			//p.liberaPalavra(palavra[palavra.Length]);
 
 		}
 			
@@ -61,6 +63,7 @@ public class Digitacao : MonoBehaviour {
 		f.possuiFoco = false;
 		foco = false;
 		Debug.Log (foco);
+		cj.atualizarPontuacao(palavra.Length*100); 
 		Destroy (this.gameObject);
 	}
 		
