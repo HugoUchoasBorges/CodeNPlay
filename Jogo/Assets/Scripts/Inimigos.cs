@@ -37,8 +37,6 @@ public class Inimigos : MonoBehaviour
         impulsoMaximo = 200;
         rotacaoMaxima = 200;
 
-
-
     }
 
     // Update is called once per frame
@@ -67,9 +65,10 @@ public class Inimigos : MonoBehaviour
 
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D colisao)
     {
-        Destroy(this.gameObject);
+        
+        //Destroy(this.gameObject);
         pontuacao += 10;
     }
 
