@@ -11,11 +11,14 @@ public class Digitacao : MonoBehaviour {
 	public bool foco;
 	public Foco f;
 
+	public Palavras p;
+
 	// Use this for initialization
 	void Start () {
 		posicao = 0;
 		palavra = palavraObjeto.text;
 		f = GameObject.FindObjectOfType<Foco> ();
+		p = GameObject.FindObjectOfType<Palavras> ();
 	}
 
 	// Update is called once per frame
@@ -45,6 +48,9 @@ public class Digitacao : MonoBehaviour {
 		if (posicao == palavra.Length) {
 			palavraObjeto.text = "destruiu";
 			Invoke ("liberarFoco", 1f);
+
+			//libera a palavra assim que um inimigo é destruido
+			p.liberaPalavra(palavra[palavra.Length]); 
 		}
 			
 	}

@@ -6,6 +6,7 @@ public class Palavras : MonoBehaviour {
 
 	public int quantidadeDePalavras;
 	public string[] vetorFinalDePalavras;
+	public ArrayList listaLetraProibida = new ArrayList();
 
 	public string[] palavrasBoa = {"amor", "carinho", "dedicação", "saúde", "alegria",
 		"amigo", "esperança", "férias", "coragem", "liberdade",
@@ -23,7 +24,7 @@ public class Palavras : MonoBehaviour {
 		"conta", "juros", "cobrança", "iptu", "fracasso"
 	};
 
-	public string[] RetornaPalavra(string[] listaDePalavra, int quantidadePalavrasGeradas, string[] listaProibida){
+	public string[] RetornaPalavra(string[] listaDePalavra, int quantidadePalavrasGeradas){
 		quantidadeDePalavras = quantidadePalavrasGeradas;
 		int i = 0;
 		string palavra;
@@ -33,12 +34,13 @@ public class Palavras : MonoBehaviour {
 
 			palavra = listaDePalavra [numeroAleatorio];
 
-			for (int j = 0; j < listaProibida.Length; j++) {
-				if (palavra[0] == listaProibida[j][0]) {
+			for (int j = 0; j < listaLetraProibida.Count; j++) {
+				if (listaLetraProibida.Contains(palavra[0])){
 					break;
 				}
-				else if(j == (listaProibida.Length - 1)){
+				else if(j == (listaLetraProibida.Count - 1)){
 					vetorFinalDePalavras [i] = palavra;
+					listaLetraProibida.Add (palavra[0]);
 					i++;
 				}			
 			}
@@ -46,5 +48,13 @@ public class Palavras : MonoBehaviour {
 
 		return vetorFinalDePalavras;
 	} 
+
+	public void liberaPalavra(char letra){
+		for (int i = 0; i < listaLetraProibida.Count; i++) {
+			if (listaLetraProibida.Contains(letra)){
+				listaLetraProibida.Remove(letra);
+			}
+		}
+	}
 
 }

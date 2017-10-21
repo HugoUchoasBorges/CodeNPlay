@@ -10,14 +10,18 @@ public class Inimigos : MonoBehaviour {
 	bool acertarLetra;
 
 	// Use this for initialization
-	void Start (string palavra) {
-		this.palavra = palavra;
+	void Start () {
+		 
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 
+	}
+
+	void setPalavra(string palavra){
+		this.palavra = palavra;
 	}
 
 	void OnCollisionEnter2D(Collision2D collision){
