@@ -11,10 +11,10 @@ public class Nave : MonoBehaviour {
     private float _entradaParaImpulso;
     private float _entradaParaRotacao;
 
-    public float topoDaTela;
-    public float baseDaTela;
-    public float bordaEsquerdaDaTela;
-    public float bordaDireitaDaTela;
+    public static float topoDaTela;
+    public static float baseDaTela;
+    public static float bordaEsquerdaDaTela;
+    public static float bordaDireitaDaTela;
 
 
 	public int quantidadeDeVidas = 3;

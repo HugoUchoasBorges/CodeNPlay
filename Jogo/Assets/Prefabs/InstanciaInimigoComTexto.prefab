@@ -221,8 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a60e5d51846c5742b882a16f6876554, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transformInimigo: {fileID: 4283794117165438, guid: 7e806f5b4e9387b47bd6ddb9be167128,
-    type: 2}
+  transformInimigo: {fileID: 4962177523953500}
 --- !u!114 &114263599770500436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,7 +242,6 @@ MonoBehaviour:
   baseDaTela: 0
   bordaEsquerdaDaTela: 0
   bordaDireitaDaTela: 0
-  textoInimigo: {fileID: 114767950550032528}
 --- !u!114 &114599556479492048
 MonoBehaviour:
   m_ObjectHideFlags: 1
