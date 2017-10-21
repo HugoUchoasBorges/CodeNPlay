@@ -20,10 +20,6 @@ public class Inimigos : MonoBehaviour {
 
 	}
 
-	bool acertouLetra(char letra){
-		int posicaoLetra;
-	}
-
 	void OnCollisionEnter2D(Collision2D collision){
 		Destroy (this.gameObject);
 		pontuacao += 10;
