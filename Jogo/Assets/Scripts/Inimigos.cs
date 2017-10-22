@@ -24,10 +24,6 @@ public class Inimigos : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-
-
-
         topoDaTela = 6.2f;
         baseDaTela = -6.2f;
         bordaEsquerdaDaTela = -10.69f;

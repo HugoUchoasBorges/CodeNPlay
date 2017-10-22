@@ -99,8 +99,9 @@ public class Nave : MonoBehaviour {
         GetComponent<Collider2D>().enabled = true;
         GetComponent<SpriteRenderer>().color = corNormal;
 
+        GameObject PauseGamePanel = GameObject.FindGameObjectWithTag("PAUSA");
         if (GameObject.FindGameObjectWithTag("PAUSA") != null)
-            if (GameObject.FindGameObjectWithTag("PAUSA").active)
+            if (PauseGamePanel.activeSelf == true)
             {
                 GetComponent<Collider2D>().enabled = false;
                 GetComponent<SpriteRenderer>().color = corInvencibilidade;

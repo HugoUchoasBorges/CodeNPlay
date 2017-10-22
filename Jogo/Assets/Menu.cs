@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour {
     {
         HowToPanel = GameObject.FindGameObjectWithTag("HowTo");
 
-        Invoke("LateStart", 0.1f);
+        Invoke("LateStart", 0.01f);
     }
 
     void LateStart()

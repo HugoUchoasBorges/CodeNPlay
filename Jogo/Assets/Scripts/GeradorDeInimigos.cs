@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GeradorDeInimigos : MonoBehaviour {
 
@@ -8,15 +9,29 @@ public class GeradorDeInimigos : MonoBehaviour {
 
     public static int totalInimigos = 10;
 	public static int totalAtual;
-
+    public GameObject painel;
     public Transform transformPlayer;
+
+    public int waveAtual;
 
 	// Use this for initialization
 	void Start () {
 		totalInimigos = 8;
 		totalAtual = totalInimigos;
+        //transicaoWave();
         InstanciarInimigos(totalInimigos);
-	}
+
+        waveAtual = 1;
+
+        painel = GameObject.FindGameObjectWithTag("WAVE");
+
+        Invoke("LateStart", 0.1f);
+    }
+
+    void LateStart()
+    {
+        painel.SetActive(false);
+    }
 	
 	void InstanciarInimigos(int totalInimigos)
     {
@@ -43,10 +58,32 @@ public class GeradorDeInimigos : MonoBehaviour {
 			
 
 		if (totalAtual == 0) {
+            waveAtual++;
+            transicaoWave();
 			totalInimigos += 3;
 			totalAtual = totalInimigos;
-			InstanciarInimigos (totalInimigos);
-
 		}
 	}
+
+    public void transicaoWave()
+    {
+        
+        if(painel != null)
+        {
+            painel.SetActive(true);
+
+            Text texto = (painel.GetComponentInChildren<Text>());
+            texto.text = "WAVE " + waveAtual;
+        }
+        
+
+        Invoke("painelTransicao", 4);
+    }
+
+    public void painelTransicao()
+    {
+
+        InstanciarInimigos(totalInimigos);
+        painel.SetActive(false);
+    }
 }

@@ -15,12 +15,13 @@ public class Digitacao : MonoBehaviour {
 	public GeradorDeInimigos gi;
 	bool destruiu;
 
+
+
 	public Palavras p;
 
 	public AudioSource som;
-	public AudioClip somInimigo;
-	public GameObject PauseGamePanel;
-    public GameObject HowToPanel;
+    public AudioClip somInimigo;
+    
 
     public GameObject nave;
 
@@ -36,8 +37,7 @@ public class Digitacao : MonoBehaviour {
 	}
 	void Start () {
 		posicao = 0;
-        PauseGamePanel = GameObject.FindGameObjectWithTag("PAUSA");
-        HowToPanel = GameObject.FindGameObjectWithTag("HowTo");
+            
         palavraObjeto.text = p.RetornaPalavra(s.sanidade);
 		palavra = palavraObjeto.text;
 
@@ -46,16 +46,12 @@ public class Digitacao : MonoBehaviour {
         palavraObjeto.text = p.RetornaPalavra(s.sanidade);
         palavra = palavraObjeto.text;
 
-        Invoke("LateStart", 0.01f);
+       
 
     }
 
 
-    private void LateStart()
-    {
-        if(PauseGamePanel != null)
-            PauseGamePanel.SetActive(false);
-    }
+    
 
     void Update()
     {
@@ -68,12 +64,8 @@ public class Digitacao : MonoBehaviour {
         {
             string entrada = Input.inputString.ToUpper();
             
-            if (Input.GetKeyDown("escape"))
-            {
-                Debug.Log("ESC APERTADO");
-                menuPausa();
-            }
-            else if (entrada.Equals(palavra[posicao].ToString()))
+            
+            if (entrada.Equals(palavra[posicao].ToString()))
             {
                 if (posicao == 0 && !f.possuiFoco)
                 {
@@ -119,43 +111,6 @@ public class Digitacao : MonoBehaviour {
 		som.PlayOneShot (somInimigo);
         Destroy (this.gameObject);
 	}
-
-    public void menuPausa(){
-        if (PauseGamePanel.active) 
-            desativaMenuPausa();
-
-        else
-            ativaMenuPausa();
-    }
-
-    public void ativaMenuPausa()
-    {
-        PauseGamePanel.SetActive(true);
-        invulneravel();
-        CaracteristicasDoJogo.jogoPausado = true;
-    }
-
-    public void desativaMenuPausa()
-    {
-        PauseGamePanel.SetActive(false);
-        HowToPanel.SetActive(false);
-        vulneravel();
-        CaracteristicasDoJogo.jogoPausado = false;
-    }
-
-
-    public void vulneravel()
-    {
-        nave.GetComponent<Collider2D>().enabled = true;
-        nave.GetComponent<SpriteRenderer>().color = Color.white;
-    }
-
-    public void invulneravel()
-    {
-        nave.GetComponent<Collider2D>().enabled = false;
-        nave.GetComponent<SpriteRenderer>().color = Color.red;
-    }
-
 
 }
 
