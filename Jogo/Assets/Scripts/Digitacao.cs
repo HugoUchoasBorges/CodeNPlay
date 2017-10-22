@@ -14,6 +14,10 @@ public class Digitacao : MonoBehaviour {
 
 	public Palavras p;
 
+	public AudioClip somExplosao;
+	public AudioSource somInimigoExplodindo; 
+
+
 	// Use this for initialization
 	void Start () {
 		posicao = 0;
@@ -22,6 +26,7 @@ public class Digitacao : MonoBehaviour {
 		palavraObjeto.text = p.RetornaPalavra ();
 		palavra = palavraObjeto.text;
         cj = GameObject.FindObjectOfType<CaracteristicasDoJogo>();
+
     }
 
     void Update()
@@ -67,7 +72,17 @@ public class Digitacao : MonoBehaviour {
 		f.possuiFoco = false;
 		foco = false;
         cj.atualizarPontuacao(palavra.Length * 100);
-        Destroy (this.gameObject);
+
+		somInimigoExplodindo.PlayOneShot (somExplosao);
+		StartCoroutine("waitFourSecunds");
+
+        
+	}
+
+
+	IEnumerator waitFourSecunds(){
+		yield return new WaitForSeconds(2);
+		Destroy (this.gameObject);
 	}
 		
 }
