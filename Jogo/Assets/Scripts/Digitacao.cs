@@ -20,6 +20,7 @@ public class Digitacao : MonoBehaviour {
 	public AudioSource som;
 	public AudioClip somInimigo;
 	public GameObject PauseGamePanel;
+    public GameObject HowToPanel;
 
     public GameObject nave;
 
@@ -36,22 +37,24 @@ public class Digitacao : MonoBehaviour {
 	void Start () {
 		posicao = 0;
         PauseGamePanel = GameObject.FindGameObjectWithTag("PAUSA");
+        HowToPanel = GameObject.FindGameObjectWithTag("HowTo");
         palavraObjeto.text = p.RetornaPalavra(s.sanidade);
 		palavra = palavraObjeto.text;
 
         nave = GameObject.FindGameObjectWithTag("Player");
 
-        Invoke("LateStart",0.01f);
+        palavraObjeto.text = p.RetornaPalavra(s.sanidade);
+        palavra = palavraObjeto.text;
+
+        Invoke("LateStart", 0.01f);
+
     }
 
 
     private void LateStart()
     {
-        PauseGamePanel.SetActive(false);
-        //PauseGamePanel.transform.Translate(0,10,0);
-       
-	palavraObjeto.text = p.RetornaPalavra (s.sanidade);
-	palavra = palavraObjeto.text;
+        if(PauseGamePanel != null)
+            PauseGamePanel.SetActive(false);
     }
 
     void Update()
@@ -135,6 +138,7 @@ public class Digitacao : MonoBehaviour {
     public void desativaMenuPausa()
     {
         PauseGamePanel.SetActive(false);
+        HowToPanel.SetActive(false);
         vulneravel();
         CaracteristicasDoJogo.jogoPausado = false;
     }

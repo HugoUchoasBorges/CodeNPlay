@@ -46,6 +46,7 @@ public class GeradorDeInimigos : MonoBehaviour {
 			totalInimigos += 3;
 			totalAtual = totalInimigos;
 			InstanciarInimigos (totalInimigos);
+
 		}
 	}
 }

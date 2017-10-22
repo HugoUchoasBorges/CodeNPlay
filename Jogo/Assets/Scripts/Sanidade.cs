@@ -38,8 +38,14 @@ public class Sanidade : MonoBehaviour
         
         sanidade--;
         sanidadeTexto.text = "in.sanity: " + sanidade;
-        
-        
+
+        Invoke("LateStart", 0.01f);
+
+    }
+
+    void LateStart()
+    {
+
     }
 
     void sanidadeTempo2()

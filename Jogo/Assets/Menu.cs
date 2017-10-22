@@ -5,6 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
+    GameObject HowToPanel;
+
+    private void Start()
+    {
+        HowToPanel = GameObject.FindGameObjectWithTag("HowTo");
+
+        Invoke("LateStart", 0.1f);
+    }
+
+    void LateStart()
+    {
+        if (HowToPanel != null)
+            HowToPanel.SetActive(false);
+    }
 
     public void iniciarJogo()
     {
@@ -21,6 +35,20 @@ public class Menu : MonoBehaviour {
 
         SceneManager.LoadScene("HowToPlay");
         
+    }
+
+    public void comoJogarMenu()
+    {
+
+        HowToPanel.SetActive(true);
+
+    }
+
+    public void comoJogarMenuVoltar()
+    {
+
+        HowToPanel.SetActive(false);
+
     }
 
     public void voltarAoMenu()
