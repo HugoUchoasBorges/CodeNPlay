@@ -10,10 +10,10 @@ public class Sanidade : MonoBehaviour
     // Use this for initialization
 
     string[] insanidades = {
-        "  s aNITY :",
+        "insanity:",
         "    sa     NITy:",
-        "sanITYYYYYY:",
-        "    SAN I   TYY:",
+        "in.san:",
+        "I    SAN I   TYY:",
         "s  a a nniT yyy:"
     };
 
@@ -34,7 +34,7 @@ public class Sanidade : MonoBehaviour
     void sanidadeTempo1()
     {
         sanidade--;
-        sanidadeTexto.text = "   sanity: " + sanidade;
+        sanidadeTexto.text = "in.sanity: " + sanidade;
     }
 
     void sanidadeTempo2()
