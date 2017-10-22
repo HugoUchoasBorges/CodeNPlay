@@ -33,7 +33,8 @@ public class Digitacao : MonoBehaviour {
 
         if (Input.anyKeyDown)
         {
-            if (Input.inputString.Equals(palavra[posicao].ToString()))
+            string entrada = Input.inputString.ToUpper();
+            if (entrada.Equals(palavra[posicao].ToString()))
             {
                 if (posicao == 0 && !f.possuiFoco)
                 {

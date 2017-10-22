@@ -10,17 +10,17 @@ public class Sanidade : MonoBehaviour
     // Use this for initialization
 
     string[] insanidades = {
-        "  s aNIDa de:",
-        "    sa     NIDa de:",
-        "sanIDADEEEEE:",
-        "    SAN I   DADE:",
-        "s  a a nniD ade"
+        "  s aNITY :",
+        "    sa     NITy:",
+        "sanITYYYYYY:",
+        "    SAN I   TYY:",
+        "s  a a nniT yyy:"
     };
 
     void Start()
     {
         sanidade = 100;
-        sanidadeTexto.text = "   sanidade: " + sanidade;
+        sanidadeTexto.text = "   sanity: " + sanidade;
         InvokeRepeating("sanidadeTempo1", 2f, 3f);
         InvokeRepeating("sanidadeTempo2", 6f, 3f);
     }
@@ -34,7 +34,7 @@ public class Sanidade : MonoBehaviour
     void sanidadeTempo1()
     {
         sanidade--;
-        sanidadeTexto.text = "   sanidade: " + sanidade;
+        sanidadeTexto.text = "   sanity: " + sanidade;
     }
 
     void sanidadeTempo2()

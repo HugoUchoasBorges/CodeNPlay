@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cena1.unity
     guid: 89d066f995c7dea49b61924c4ade9270
+  - enabled: 1
+    path: Assets/HowToPlay.unity
+    guid: 3b0f6800e7d2f754f9318094e09be1e0
