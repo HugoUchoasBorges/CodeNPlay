@@ -26,6 +26,8 @@ public class Nave : MonoBehaviour {
     // Use this for initialization
     void Start() {
 
+        game_over_panel.SetActive(false);
+
         topoDaTela = 6.18f;
         baseDaTela = -6.18f;
         bordaEsquerdaDaTela = -10.67f;
@@ -120,8 +122,8 @@ public class Nave : MonoBehaviour {
     void fimDeJogo()
     {
         CancelInvoke("reviver");
-        //game_over_panel.SetActive(true);
-        Debug.Log("JOGADOR MORREU  !!! ");
+        game_over_panel.SetActive(true);
+        //Debug.Log("JOGADOR MORREU  !!! ");
     }
 
 }
