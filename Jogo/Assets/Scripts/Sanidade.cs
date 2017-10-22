@@ -19,7 +19,7 @@ public class Sanidade : MonoBehaviour
 
     void Start()
     {
-        sanidade = 100;
+        sanidade = 50;
         sanidadeTexto.text = "   sanity: " + sanidade;
         InvokeRepeating("sanidadeTempo1", 2f, 3f);
         InvokeRepeating("sanidadeTempo2", 6f, 3f);

@@ -8,6 +8,7 @@ public class CaracteristicasDoJogo : MonoBehaviour {
     public static int totalVidas;
     public int pontuacao = 0;
     public Text pontuacaoText;
+	public static int estadoJogo; // 0 = palavras ruins na tela, 1 = palavras boas
 
    
 

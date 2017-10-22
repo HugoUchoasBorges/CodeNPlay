@@ -24,18 +24,22 @@ public class Inimigos : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Vector2 impulso = new Vector2(Random.Range(-impulsoMaximo, impulsoMaximo), Random.Range(-impulsoMaximo, impulsoMaximo));
-        float rotacao = Random.Range(-rotacaoMaxima, rotacaoMaxima);
 
-        rigidBody2D.AddForce(impulso);
-        rigidBody2D.AddTorque(rotacao);
+
+
 
         topoDaTela = 6.2f;
         baseDaTela = -6.2f;
         bordaEsquerdaDaTela = -10.69f;
         bordaDireitaDaTela = 10.69f;
-        impulsoMaximo = 200;
+        impulsoMaximo = 250;
         rotacaoMaxima = 200;
+
+		Vector2 impulso = new Vector2(Random.Range(-impulsoMaximo, impulsoMaximo), Random.Range(-impulsoMaximo, impulsoMaximo));
+		float rotacao = Random.Range(-rotacaoMaxima, rotacaoMaxima);
+
+		rigidBody2D.AddForce(impulso);
+		rigidBody2D.AddTorque(rotacao);
 
     }
 

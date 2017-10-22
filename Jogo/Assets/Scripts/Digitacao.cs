@@ -10,25 +10,34 @@ public class Digitacao : MonoBehaviour {
 	public int posicao;
 	public bool foco;
 	public Foco f;
+    CaracteristicasDoJogo cj;
+	public Sanidade s;
+	public GeradorDeInimigos gi;
+	bool destruiu;
 
 	public Palavras p;
-	public CaracteristicasDoJogo cj;
 
-    public GameObject PauseGamePanel;
+	public AudioSource som;
+	public AudioClip somInimigo;
+	public GameObject PauseGamePanel;
 
     public GameObject nave;
 
-    // Use this for initialization
-    void Start () {
-		posicao = 0;
+	// Use this for initialization
+
+	void Awake() {
 		f = GameObject.FindObjectOfType<Foco> ();
-        p = GameObject.FindObjectOfType<Palavras>();
+		p = GameObject.FindObjectOfType<Palavras> ();
+		cj = GameObject.FindObjectOfType<CaracteristicasDoJogo>();
+		s = GameObject.FindObjectOfType<Sanidade> ();
+		gi = GameObject.FindObjectOfType<GeradorDeInimigos> ();
+		//somInimigo = GameObject.Find ("ItemMenuSelecionado");
+	}
+	void Start () {
+		posicao = 0;
         PauseGamePanel = GameObject.FindGameObjectWithTag("PAUSA");
-        palavraObjeto.text = p.RetornaPalavra ();
+        palavraObjeto.text = p.RetornaPalavra(s.sanidade);
 		palavra = palavraObjeto.text;
-        cj = GameObject.FindObjectOfType<CaracteristicasDoJogo>();
-        //PauseGamePanel.transform.position = new Vector3(0, 500, 0);
-        //PauseGamePanel.SetActive(false);
 
         nave = GameObject.FindGameObjectWithTag("Player");
 
@@ -41,11 +50,13 @@ public class Digitacao : MonoBehaviour {
         PauseGamePanel.SetActive(false);
         //PauseGamePanel.transform.Translate(0,10,0);
        
+	palavraObjeto.text = p.RetornaPalavra (s.sanidade);
+	palavra = palavraObjeto.text;
     }
 
     void Update()
     {
-        if (!foco && f.possuiFoco)
+		if (!foco && f.possuiFoco || destruiu)
         {
             return;
         }
@@ -80,9 +91,8 @@ public class Digitacao : MonoBehaviour {
 
             if (posicao == palavra.Length)
             {
-                palavraObjeto.text = "destruiu";
+				destruiu = true;
                 Invoke("liberarFoco", 0.1f);
-
             }
         }
 
@@ -93,12 +103,21 @@ public class Digitacao : MonoBehaviour {
 		f.possuiFoco = false;
 		foco = false;
         cj.atualizarPontuacao(palavra.Length * 100);
+		if (s.sanidade < 100) {
+			s.sanidade += 15;
+
+		} else {
+			s.sanidade += 15;
+		}
+
+		s.sanidadeTexto.text = "sanity" + s.sanidade;
+		GeradorDeInimigos.totalAtual--;
+		gi.iniciarWave (s.sanidade);
+		som.PlayOneShot (somInimigo);
         Destroy (this.gameObject);
 	}
 
-    void menuPausa()
-    {
-
+    public void menuPausa(){
         if (PauseGamePanel.active)
             desativaMenuPausa();
 
@@ -110,7 +129,6 @@ public class Digitacao : MonoBehaviour {
     {
         PauseGamePanel.SetActive(true);
         invulneravel();
-
     }
 
     public void desativaMenuPausa()

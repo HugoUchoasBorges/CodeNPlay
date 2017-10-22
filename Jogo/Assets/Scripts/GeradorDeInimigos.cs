@@ -6,15 +6,16 @@ public class GeradorDeInimigos : MonoBehaviour {
 
     public GameObject[] inimigos;
 
-    public int totalInimigos;
+    public static int totalInimigos = 10;
+	public static int totalAtual;
 
     public Transform transformPlayer;
 
 	// Use this for initialization
 	void Start () {
-
+		totalInimigos = 8;
+		totalAtual = totalInimigos;
         InstanciarInimigos(totalInimigos);
-       
 	}
 	
 	void InstanciarInimigos(int totalInimigos)
@@ -26,4 +27,25 @@ public class GeradorDeInimigos : MonoBehaviour {
             inimigos[Random.Range(0, inimigos.Length)].transform.position = new Vector3(Random.Range(Nave.bordaEsquerdaDaTela, Nave.bordaDireitaDaTela), Random.Range(Nave.baseDaTela, Nave.topoDaTela), 0);
         }
     }
+
+
+	void Update() {
+		
+
+	}
+
+	public void iniciarWave(int sanidade) {
+		if (sanidade > 100) {
+			CaracteristicasDoJogo.estadoJogo = 1;
+		} else {
+			CaracteristicasDoJogo.estadoJogo = 0;
+		}
+			
+
+		if (totalAtual == 0) {
+			totalInimigos += 3;
+			totalAtual = totalInimigos;
+			InstanciarInimigos (totalInimigos);
+		}
+	}
 }

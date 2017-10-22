@@ -32,8 +32,8 @@ public class Nave : MonoBehaviour {
         baseDaTela = -6.18f;
         bordaEsquerdaDaTela = -10.67f;
         bordaDireitaDaTela = 10.67f;
-        impulso = 100;
-        impulsoDeRotacao = 20;
+        impulso = 300;
+        impulsoDeRotacao = 300;
 
         rigidBody2D.angularDrag = 0.8f;
         rigidBody2D.drag = 0.3f;
@@ -74,7 +74,9 @@ public class Nave : MonoBehaviour {
     void FixedUpdate()
     {
         rigidBody2D.AddRelativeForce(Vector2.up * _entradaParaImpulso * impulso * Time.deltaTime);
-        rigidBody2D.AddTorque(-_entradaParaRotacao * impulsoDeRotacao * Time.deltaTime);
+        //rigidBody2D.AddTorque(-_entradaParaRotacao * impulsoDeRotacao * Time.deltaTime);
+		//rigidBody2D.AddRelativeForce(Vector2.up * _entradaParaImpulso * impulso * Time.deltaTime);
+		rigidBody2D.transform.Rotate(Vector3.forward* -_entradaParaRotacao * impulsoDeRotacao * Time.deltaTime);
 
     }
 
@@ -94,11 +96,16 @@ public class Nave : MonoBehaviour {
     public void vulneravel()
     {
 
-        if (!GameObject.FindGameObjectWithTag("PAUSA").active)
-        {
-            GetComponent<Collider2D>().enabled = true;
-            GetComponent<SpriteRenderer>().color = corNormal;
-        }
+        GetComponent<Collider2D>().enabled = true;
+        GetComponent<SpriteRenderer>().color = corNormal;
+
+        if (GameObject.FindGameObjectWithTag("PAUSA") != null)
+            if (GameObject.FindGameObjectWithTag("PAUSA").active)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                GetComponent<SpriteRenderer>().color = corInvencibilidade;
+            }
+                
             
     }
 
