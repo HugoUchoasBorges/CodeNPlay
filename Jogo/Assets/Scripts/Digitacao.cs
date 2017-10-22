@@ -118,7 +118,7 @@ public class Digitacao : MonoBehaviour {
 	}
 
     public void menuPausa(){
-        if (PauseGamePanel.active)
+        if (PauseGamePanel.active) 
             desativaMenuPausa();
 
         else
@@ -129,12 +129,14 @@ public class Digitacao : MonoBehaviour {
     {
         PauseGamePanel.SetActive(true);
         invulneravel();
+        CaracteristicasDoJogo.jogoPausado = true;
     }
 
     public void desativaMenuPausa()
     {
         PauseGamePanel.SetActive(false);
         vulneravel();
+        CaracteristicasDoJogo.jogoPausado = false;
     }
 
 

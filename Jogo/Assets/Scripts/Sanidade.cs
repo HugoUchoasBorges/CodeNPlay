@@ -33,12 +33,20 @@ public class Sanidade : MonoBehaviour
 
     void sanidadeTempo1()
     {
+        if (CaracteristicasDoJogo.jogoPausado)
+            return;
+        
         sanidade--;
         sanidadeTexto.text = "in.sanity: " + sanidade;
+        
+        
     }
 
     void sanidadeTempo2()
     {
+        if (CaracteristicasDoJogo.jogoPausado)
+            return;
+
         int n = Random.Range(0, 5);
         sanidade -= n;
 

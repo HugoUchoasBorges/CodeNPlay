@@ -9,7 +9,7 @@ public class CaracteristicasDoJogo : MonoBehaviour {
     public int pontuacao = 0;
     public Text pontuacaoText;
 	public static int estadoJogo; // 0 = palavras ruins na tela, 1 = palavras boas
-
+    public static bool jogoPausado;
    
 
     // Use this for initialization
@@ -17,6 +17,8 @@ public class CaracteristicasDoJogo : MonoBehaviour {
         totalVidas = 3;
         pontuacao = 0;
         pontuacaoText.text = "Score: " + pontuacao;
+
+        jogoPausado = false;
 
     }
 
