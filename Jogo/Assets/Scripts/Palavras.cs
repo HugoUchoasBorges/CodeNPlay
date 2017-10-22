@@ -22,21 +22,21 @@ public class Palavras : MonoBehaviour {
 			int numeroAleatorio = Random.Range (0, palavrasRuins.Length);
 			palavra = palavrasRuins [numeroAleatorio].ToUpper();
 
-            Debug.Log("Palavra analizada: " + palavra);
+            //Debug.Log("Palavra analizada: " + palavra);
 
 			if (listaLetraProibida.Count == 0) {
                 listaLetraProibida.Add (palavra [0]);
-                Debug.Log("Palavra retornada: " + palavra);
-                Debug.Log("Letra adicionada na lista: " + palavra[0]);
+                //Debug.Log("Palavra retornada: " + palavra);
+               //Debug.Log("Letra adicionada na lista: " + palavra[0]);
                 return palavra;
 			} else {
 				if (listaLetraProibida.Contains (palavra [0])) {
-                    Debug.Log("Letra adicionada na lista: " + palavra[0]);
-					continue;
+                    //Debug.Log("Letra adicionada na lista: " + palavra[0]);
+                    continue;
 				}
 
-                Debug.Log("Palavra retornada: " + palavra);
-                Debug.Log("Letra adicionada na lista: " + palavra[0]);
+                //Debug.Log("Palavra retornada: " + palavra);
+                //Debug.Log("Letra adicionada na lista: " + palavra[0]);
                 listaLetraProibida.Add (palavra [0]);
 				return palavra;
 			}

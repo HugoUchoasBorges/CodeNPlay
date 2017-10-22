@@ -21,8 +21,8 @@ public class GeradorDeInimigos : MonoBehaviour {
     {
         for(int i = 0; i < totalInimigos; i++)
         {
-            //GameObject inimigoInstanciado = (GameObject)Instantiate(inimigos[0]);
-            Instantiate(inimigos[0]);
+            GameObject inimigoInstanciado = (GameObject)Instantiate(inimigos[0]);
+            //Instantiate(inimigos[0]);
             inimigos[Random.Range(0, inimigos.Length)].transform.position = new Vector3(Random.Range(Nave.bordaEsquerdaDaTela, Nave.bordaDireitaDaTela), Random.Range(Nave.baseDaTela, Nave.topoDaTela), 0);
         }
     }

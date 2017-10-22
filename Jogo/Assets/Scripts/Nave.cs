@@ -16,7 +16,7 @@ public class Nave : MonoBehaviour {
     public static float bordaEsquerdaDaTela;
     public static float bordaDireitaDaTela;
 
-
+    public bool morto;
 
     public Color corInvencibilidade;
     public Color corNormal;
@@ -86,13 +86,26 @@ public class Nave : MonoBehaviour {
         SpriteRenderer renderizadorDeSprite = GetComponent<SpriteRenderer>();
         renderizadorDeSprite.enabled = true;
         renderizadorDeSprite.color = corInvencibilidade;
+
         Invoke("vulneravel", 3f);
+        morto = false;
     }
 
-    void vulneravel()
+    public void vulneravel()
     {
-        GetComponent<Collider2D>().enabled = true;
-        GetComponent<SpriteRenderer>().color = corNormal;
+
+        if (!GameObject.FindGameObjectWithTag("PAUSA").active)
+        {
+            GetComponent<Collider2D>().enabled = true;
+            GetComponent<SpriteRenderer>().color = corNormal;
+        }
+            
+    }
+
+    public void invulneravel()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<SpriteRenderer>().color = corInvencibilidade;
     }
 
 
@@ -110,10 +123,12 @@ public class Nave : MonoBehaviour {
 
         GetComponent<SpriteRenderer>().enabled = false;
         GetComponent<Collider2D>().enabled = false;
+        
 
         Invoke("reviver", 2f);
         if (CaracteristicasDoJogo.totalVidas <= 0)
         {
+            morto = true;
             fimDeJogo();
         }
         
