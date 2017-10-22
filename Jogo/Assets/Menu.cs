@@ -9,4 +9,19 @@ public class Menu : MonoBehaviour {
     {
         SceneManager.LoadScene("Cena1");
     }
+
+    public void sairDoJogo()
+    {
+        Application.Quit();
+    }
+
+    public void comoJogar()
+    {
+        SceneManager.LoadScene("HowToPlay");
+    }
+
+    public void voltarAoMenu()
+    {
+        SceneManager.LoadScene("Menu Principal");
+    }
 }
