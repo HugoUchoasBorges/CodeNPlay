@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset><contributor><author></author><authoring_tool>FBX COLLADA exporter</authoring_tool><comments></comments></contributor><created>2017-10-22T00:22:23Z</created><keywords></keywords><modified>2017-10-22T00:22:23Z</modified><revision></revision><subject></subject><title></title><unit meter="0.010000" name="centimeter"></unit><up_axis>Y_UP</up_axis></asset>
+  <library_materials>
+    <material id="lambert2" name="lambert2">
+      <instance_effect url="#lambert2-fx"/>
+    </material>
+    <material id="lambert3" name="lambert3">
+      <instance_effect url="#lambert3-fx"/>
+    </material>
+  </library_materials>
+  <library_effects>
+    <effect id="lambert2-fx" name="lambert2">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.400000  0.400000 0.400000 1.000000</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000  0.000000 0.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="lambert3-fx" name="lambert3">
+      <profile_COMMON>
+        <technique sid="standard">
+          <lambert>
+            <emission>
+              <color sid="emission">0.000000  0.000000 0.000000 1.000000</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.000000  0.000000 0.000000 1.000000</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.097600  0.097600 0.097600 1.000000</color>
+            </diffuse>
+            <transparent opaque="RGB_ZERO">
+              <color sid="transparent">0.000000  0.000000 0.000000 1.000000</color>
+            </transparent>
+            <transparency>
+              <float sid="transparency">1.000000</float>
+            </transparency>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="pCube3-lib" name="pCube3Mesh">
+      <mesh>
+        <source id="pCube3-POSITION">
+          <float_array id="pCube3-POSITION-array" count="24">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.365899 0.500000 0.363836
+0.387390 0.500000 0.353474
+-0.375470 0.500000 -0.354617
+0.367731 0.500000 -0.360278
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube3-POSITION-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube3-Normal0">
+          <float_array id="pCube3-Normal0-array" count="108">
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+</float_array>
+          <technique_common>
+            <accessor source="#pCube3-Normal0-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube3-UV0">
+          <float_array id="pCube3-UV0-array" count="28">
+0.375000 0.000000
+0.625000 0.000000
+0.375000 0.250000
+0.625000 0.250000
+0.375000 0.500000
+0.625000 0.500000
+0.375000 0.750000
+0.625000 0.750000
+0.375000 1.000000
+0.625000 1.000000
+0.875000 0.000000
+0.875000 0.250000
+0.125000 0.000000
+0.125000 0.250000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube3-UV0-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCube3-VERTEX">
+          <input semantic="POSITION" source="#pCube3-POSITION"/>
+        </vertices>
+        <triangles count="12" material="lambert2"><input semantic="VERTEX" offset="0" source="#pCube3-VERTEX"/><input semantic="NORMAL" offset="1" source="#pCube3-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pCube3-UV0"/><p> 2 0 2 1 1 1 3 2 3 1 3 1 2 4 2 0 5 0 5 6 5 2 7 2 3 8 3 2 9 2 5 10 5 4 11 4 6 12 6 5 13 5 7 14 7 5 15 5 6 16 6 4 17 4 1 18 9 0 19 8 6 20 6 1 21 9 6 22 6 7 23 7 3 24 3 7 25 10 5 26 11 7 27 10 3 28 3 1 29 1 0 30 0 4 31 13 6 32 12 4 33 13 0 34 0 2 35 2</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pCube5-lib" name="pCube5Mesh">
+      <mesh>
+        <source id="pCube5-POSITION">
+          <float_array id="pCube5-POSITION-array" count="24">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.365899 0.500000 0.363836
+0.387390 0.500000 0.353474
+-0.375470 0.500000 -0.354617
+0.367731 0.500000 -0.360278
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube5-POSITION-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube5-Normal0">
+          <float_array id="pCube5-Normal0-array" count="108">
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+</float_array>
+          <technique_common>
+            <accessor source="#pCube5-Normal0-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube5-UV0">
+          <float_array id="pCube5-UV0-array" count="28">
+0.375000 0.000000
+0.625000 0.000000
+0.375000 0.250000
+0.625000 0.250000
+0.375000 0.500000
+0.625000 0.500000
+0.375000 0.750000
+0.625000 0.750000
+0.375000 1.000000
+0.625000 1.000000
+0.875000 0.000000
+0.875000 0.250000
+0.125000 0.000000
+0.125000 0.250000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube5-UV0-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCube5-VERTEX">
+          <input semantic="POSITION" source="#pCube5-POSITION"/>
+        </vertices>
+        <triangles count="12" material="lambert2"><input semantic="VERTEX" offset="0" source="#pCube5-VERTEX"/><input semantic="NORMAL" offset="1" source="#pCube5-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pCube5-UV0"/><p> 2 0 2 1 1 1 3 2 3 1 3 1 2 4 2 0 5 0 5 6 5 2 7 2 3 8 3 2 9 2 5 10 5 4 11 4 6 12 6 5 13 5 7 14 7 5 15 5 6 16 6 4 17 4 1 18 9 0 19 8 6 20 6 1 21 9 6 22 6 7 23 7 3 24 3 7 25 10 5 26 11 7 27 10 3 28 3 1 29 1 0 30 0 4 31 13 6 32 12 4 33 13 0 34 0 2 35 2</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pCube6-lib" name="pCube6Mesh">
+      <mesh>
+        <source id="pCube6-POSITION">
+          <float_array id="pCube6-POSITION-array" count="24">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.365899 0.500000 0.363836
+0.387390 0.500000 0.353474
+-0.375470 0.500000 -0.354617
+0.367731 0.500000 -0.360278
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube6-POSITION-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube6-Normal0">
+          <float_array id="pCube6-Normal0-array" count="108">
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+</float_array>
+          <technique_common>
+            <accessor source="#pCube6-Normal0-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube6-UV0">
+          <float_array id="pCube6-UV0-array" count="28">
+0.375000 0.000000
+0.625000 0.000000
+0.375000 0.250000
+0.625000 0.250000
+0.375000 0.500000
+0.625000 0.500000
+0.375000 0.750000
+0.625000 0.750000
+0.375000 1.000000
+0.625000 1.000000
+0.875000 0.000000
+0.875000 0.250000
+0.125000 0.000000
+0.125000 0.250000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube6-UV0-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCube6-VERTEX">
+          <input semantic="POSITION" source="#pCube6-POSITION"/>
+        </vertices>
+        <triangles count="12" material="lambert2"><input semantic="VERTEX" offset="0" source="#pCube6-VERTEX"/><input semantic="NORMAL" offset="1" source="#pCube6-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pCube6-UV0"/><p> 2 0 2 1 1 1 3 2 3 1 3 1 2 4 2 0 5 0 5 6 5 2 7 2 3 8 3 2 9 2 5 10 5 4 11 4 6 12 6 5 13 5 7 14 7 5 15 5 6 16 6 4 17 4 1 18 9 0 19 8 6 20 6 1 21 9 6 22 6 7 23 7 3 24 3 7 25 10 5 26 11 7 27 10 3 28 3 1 29 1 0 30 0 4 31 13 6 32 12 4 33 13 0 34 0 2 35 2</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pCube7-lib" name="pCube7Mesh">
+      <mesh>
+        <source id="pCube7-POSITION">
+          <float_array id="pCube7-POSITION-array" count="24">
+-0.500000 -0.500000 0.500000
+0.500000 -0.500000 0.500000
+-0.365899 0.500000 0.363836
+0.387390 0.500000 0.353474
+-0.375470 0.500000 -0.354617
+0.367731 0.500000 -0.360278
+-0.500000 -0.500000 -0.500000
+0.500000 -0.500000 -0.500000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube7-POSITION-array" count="8" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube7-Normal0">
+          <float_array id="pCube7-Normal0-array" count="108">
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.005852 0.139890 0.990150
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+0.000000 1.000000 0.000000
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+-0.003215 0.141113 -0.989988
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+0.992528 0.121486 -0.011386
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+-0.991730 0.128221 0.005524
+</float_array>
+          <technique_common>
+            <accessor source="#pCube7-Normal0-array" count="36" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pCube7-UV0">
+          <float_array id="pCube7-UV0-array" count="28">
+0.375000 0.000000
+0.625000 0.000000
+0.375000 0.250000
+0.625000 0.250000
+0.375000 0.500000
+0.625000 0.500000
+0.375000 0.750000
+0.625000 0.750000
+0.375000 1.000000
+0.625000 1.000000
+0.875000 0.000000
+0.875000 0.250000
+0.125000 0.000000
+0.125000 0.250000
+</float_array>
+          <technique_common>
+            <accessor source="#pCube7-UV0-array" count="14" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pCube7-VERTEX">
+          <input semantic="POSITION" source="#pCube7-POSITION"/>
+        </vertices>
+        <triangles count="12" material="lambert2"><input semantic="VERTEX" offset="0" source="#pCube7-VERTEX"/><input semantic="NORMAL" offset="1" source="#pCube7-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pCube7-UV0"/><p> 2 0 2 1 1 1 3 2 3 1 3 1 2 4 2 0 5 0 5 6 5 2 7 2 3 8 3 2 9 2 5 10 5 4 11 4 6 12 6 5 13 5 7 14 7 5 15 5 6 16 6 4 17 4 1 18 9 0 19 8 6 20 6 1 21 9 6 22 6 7 23 7 3 24 3 7 25 10 5 26 11 7 27 10 3 28 3 1 29 1 0 30 0 4 31 13 6 32 12 4 33 13 0 34 0 2 35 2</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pPyramid1-lib" name="pPyramid1Mesh">
+      <mesh>
+        <source id="pPyramid1-POSITION">
+          <float_array id="pPyramid1-POSITION-array" count="15">
+0.000000 -0.353553 -0.707107
+-0.707107 -0.353553 -0.000000
+-0.000000 -0.353553 0.707107
+0.707107 -0.353553 0.000000
+0.000000 0.353553 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid1-POSITION-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid1-Normal0">
+          <float_array id="pPyramid1-Normal0-array" count="54">
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid1-Normal0-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid1-UV0">
+          <float_array id="pPyramid1-UV0-array" count="20">
+0.500000 0.000000
+0.250000 0.250000
+0.500000 0.500000
+0.750000 0.250000
+0.250000 0.500000
+0.375000 0.500000
+0.500000 0.500000
+0.625000 0.500000
+0.750000 0.500000
+0.500000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid1-UV0-array" count="10" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPyramid1-VERTEX">
+          <input semantic="POSITION" source="#pPyramid1-POSITION"/>
+        </vertices>
+        <triangles count="6" material="lambert3"><input semantic="VERTEX" offset="0" source="#pPyramid1-VERTEX"/><input semantic="NORMAL" offset="1" source="#pPyramid1-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pPyramid1-UV0"/><p> 3 0 3 1 1 1 0 2 0 1 3 1 3 4 3 2 5 2 0 6 4 1 7 5 4 8 9 1 9 5 2 10 6 4 11 9 2 12 6 3 13 7 4 14 9 3 15 7 0 16 8 4 17 9</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pPyramid2-lib" name="pPyramid2Mesh">
+      <mesh>
+        <source id="pPyramid2-POSITION">
+          <float_array id="pPyramid2-POSITION-array" count="15">
+0.000000 -0.353553 -0.707107
+-0.707107 -0.353553 -0.000000
+-0.000000 -0.353553 0.707107
+0.707107 -0.353553 0.000000
+0.000000 0.353553 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid2-POSITION-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid2-Normal0">
+          <float_array id="pPyramid2-Normal0-array" count="54">
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid2-Normal0-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid2-UV0">
+          <float_array id="pPyramid2-UV0-array" count="20">
+0.500000 0.000000
+0.250000 0.250000
+0.500000 0.500000
+0.750000 0.250000
+0.250000 0.500000
+0.375000 0.500000
+0.500000 0.500000
+0.625000 0.500000
+0.750000 0.500000
+0.500000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid2-UV0-array" count="10" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPyramid2-VERTEX">
+          <input semantic="POSITION" source="#pPyramid2-POSITION"/>
+        </vertices>
+        <triangles count="6" material="lambert3"><input semantic="VERTEX" offset="0" source="#pPyramid2-VERTEX"/><input semantic="NORMAL" offset="1" source="#pPyramid2-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pPyramid2-UV0"/><p> 3 0 3 1 1 1 0 2 0 1 3 1 3 4 3 2 5 2 0 6 4 1 7 5 4 8 9 1 9 5 2 10 6 4 11 9 2 12 6 3 13 7 4 14 9 3 15 7 0 16 8 4 17 9</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pPyramid3-lib" name="pPyramid3Mesh">
+      <mesh>
+        <source id="pPyramid3-POSITION">
+          <float_array id="pPyramid3-POSITION-array" count="15">
+0.000000 -0.353553 -0.707107
+-0.707107 -0.353553 -0.000000
+-0.000000 -0.353553 0.707107
+0.707107 -0.353553 0.000000
+0.000000 0.353553 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid3-POSITION-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid3-Normal0">
+          <float_array id="pPyramid3-Normal0-array" count="54">
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid3-Normal0-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid3-UV0">
+          <float_array id="pPyramid3-UV0-array" count="20">
+0.500000 0.000000
+0.250000 0.250000
+0.500000 0.500000
+0.750000 0.250000
+0.250000 0.500000
+0.375000 0.500000
+0.500000 0.500000
+0.625000 0.500000
+0.750000 0.500000
+0.500000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid3-UV0-array" count="10" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPyramid3-VERTEX">
+          <input semantic="POSITION" source="#pPyramid3-POSITION"/>
+        </vertices>
+        <triangles count="6" material="lambert3"><input semantic="VERTEX" offset="0" source="#pPyramid3-VERTEX"/><input semantic="NORMAL" offset="1" source="#pPyramid3-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pPyramid3-UV0"/><p> 3 0 3 1 1 1 0 2 0 1 3 1 3 4 3 2 5 2 0 6 4 1 7 5 4 8 9 1 9 5 2 10 6 4 11 9 2 12 6 3 13 7 4 14 9 3 15 7 0 16 8 4 17 9</p></triangles>
+      </mesh>
+    </geometry>
+    <geometry id="pPyramid4-lib" name="pPyramid4Mesh">
+      <mesh>
+        <source id="pPyramid4-POSITION">
+          <float_array id="pPyramid4-POSITION-array" count="15">
+0.000000 -0.353553 -0.707107
+-0.707107 -0.353553 -0.000000
+-0.000000 -0.353553 0.707107
+0.707107 -0.353553 0.000000
+0.000000 0.353553 0.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid4-POSITION-array" count="5" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid4-Normal0">
+          <float_array id="pPyramid4-Normal0-array" count="54">
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+0.000000 -1.000000 0.000000
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 -0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+-0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+0.577350 0.577350 -0.577350
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid4-Normal0-array" count="18" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="pPyramid4-UV0">
+          <float_array id="pPyramid4-UV0-array" count="20">
+0.500000 0.000000
+0.250000 0.250000
+0.500000 0.500000
+0.750000 0.250000
+0.250000 0.500000
+0.375000 0.500000
+0.500000 0.500000
+0.625000 0.500000
+0.750000 0.500000
+0.500000 1.000000
+</float_array>
+          <technique_common>
+            <accessor source="#pPyramid4-UV0-array" count="10" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="pPyramid4-VERTEX">
+          <input semantic="POSITION" source="#pPyramid4-POSITION"/>
+        </vertices>
+        <triangles count="6" material="lambert3"><input semantic="VERTEX" offset="0" source="#pPyramid4-VERTEX"/><input semantic="NORMAL" offset="1" source="#pPyramid4-Normal0"/><input semantic="TEXCOORD" offset="2" set="0" source="#pPyramid4-UV0"/><p> 3 0 3 1 1 1 0 2 0 1 3 1 3 4 3 2 5 2 0 6 4 1 7 5 4 8 9 1 9 5 2 10 6 4 11 9 2 12 6 3 13 7 4 14 9 3 15 7 0 16 8 4 17 9</p></triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_lights>
+    <light id="_ncl1_8" name="_ncl1_8">
+      <technique_common>
+        <directional>
+          <color sid="color">1.000000 1.000000 1.000000</color>
+        </directional>
+      </technique_common>
+      <technique profile="MAYA">
+        <intensity sid="intensity">1.000000</intensity>
+      </technique>
+    </light>
+  </library_lights>
+  <library_visual_scenes>
+    <visual_scene id="teclado" name="teclado">
+      <node name="pCube3" id="pCube3" sid="pCube3"><matrix sid="matrix">1.000000 0.000000 0.000000 1.054922 0.000000 1.000000 0.000000 0.016056 0.000000 0.000000 1.000000 1.096802 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pCube3-lib"><bind_material><technique_common><instance_material symbol="lambert2" target="#lambert2"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pCube5" id="pCube5" sid="pCube5"><matrix sid="matrix">1.000000 0.000000 0.000000 1.054922 0.000000 1.000000 0.000000 0.016056 0.000000 0.000000 1.000000 0.000403 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pCube5-lib"><bind_material><technique_common><instance_material symbol="lambert2" target="#lambert2"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pCube6" id="pCube6" sid="pCube6"><matrix sid="matrix">1.000000 0.000000 0.000000 1.054922 0.000000 1.000000 0.000000 0.016056 0.000000 0.000000 1.000000 -1.120427 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pCube6-lib"><bind_material><technique_common><instance_material symbol="lambert2" target="#lambert2"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pCube7" id="pCube7" sid="pCube7"><matrix sid="matrix">1.000000 0.000000 0.000000 -0.060902 0.000000 1.000000 0.000000 0.016056 0.000000 0.000000 1.000000 0.000403 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pCube7-lib"><bind_material><technique_common><instance_material symbol="lambert2" target="#lambert2"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pPyramid1" id="pPyramid1" sid="pPyramid1"><matrix sid="matrix">0.022219 -0.343166 -0.020479 -0.059770 0.248029 0.030212 -0.237160 0.497048 0.238042 0.000552 0.249021 -0.010927 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pPyramid1-lib"><bind_material><technique_common><instance_material symbol="lambert3" target="#lambert3"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pPyramid2" id="pPyramid2" sid="pPyramid2"><matrix sid="matrix">-0.093306 0.318279 -0.093101 1.122482 0.209475 0.131547 0.239773 0.497048 0.257079 0.008331 -0.229165 -0.003336 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pPyramid2-lib"><bind_material><technique_common><instance_material symbol="lambert3" target="#lambert3"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pPyramid3" id="pPyramid3" sid="pPyramid3"><matrix sid="matrix">0.252947 -0.014727 -0.233402 1.061617 -0.216020 0.117014 -0.241493 0.497048 0.089604 0.323677 0.076683 1.160426 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pPyramid3-lib"><bind_material><technique_common><instance_material symbol="lambert3" target="#lambert3"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="pPyramid4" id="pPyramid4" sid="pPyramid4"><matrix sid="matrix">-0.249634 -0.001635 -0.237394 1.061617 0.201440 0.180826 -0.213072 0.497048 0.125621 -0.293215 -0.130078 -1.179229 0.000000 0.000000 0.000000 1.000000</matrix><instance_geometry url="#pPyramid4-lib"><bind_material><technique_common><instance_material symbol="lambert3" target="#lambert3"/></technique_common></bind_material></instance_geometry><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <node name="directionalLight1" id="directionalLight1" sid="directionalLight1"><matrix sid="matrix">1.000000 0.000000 0.000000 0.000000 0.000000 -0.041264 0.999148 5.711011 0.000000 -0.999148 -0.041264 0.000000 0.000000 0.000000 0.000000 1.000000</matrix><instance_light url="#_ncl1_8"/><extra><technique profile="FCOLLADA"><visibility>1.000000</visibility></technique></extra></node>
+      <extra><technique profile="MAX3D"><frame_rate>24.000000</frame_rate></technique><technique profile="FCOLLADA"><start_time>0.041667</start_time><end_time>8.333333</end_time></technique></extra>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#teclado"></instance_visual_scene>
+  </scene>
+</COLLADA>
