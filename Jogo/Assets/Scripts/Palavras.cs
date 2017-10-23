@@ -14,12 +14,12 @@ public class Palavras : MonoBehaviour {
     };
 
 	public string RetornaPalavra(int sanidade) {
-		if (sanidade > 100) {
-			int numeroAleatorio = Random.Range (0, palavrasBoas.Length);
-			return palavrasBoas [numeroAleatorio].ToUpper ();
-		} else {
+		if (CaracteristicasDoJogo.modoRuim) {
 			int numeroAleatorio = Random.Range (0, palavrasRuins.Length);
 			return palavrasRuins [numeroAleatorio].ToUpper ();
+		} else {
+			int numeroAleatorio = Random.Range (0, palavrasBoas.Length);
+			return palavrasBoas [numeroAleatorio].ToUpper ();
 		}
 	}
 

@@ -15,12 +15,15 @@ public class Digitacao : MonoBehaviour {
 	public GeradorDeInimigos gi;
 	bool destruiu;
 
-	public Palavras p;
+    public AudioSource sourceExplosao;
+    public AudioClip clipExplosao;
 
-	public AudioSource som;
-	public AudioClip somInimigo;
-	public GameObject PauseGamePanel;
-    public GameObject HowToPanel;
+
+    public Palavras p;
+
+	//public AudioSource som;
+   // public AudioClip somInimigo;
+    
 
     public GameObject nave;
 
@@ -36,26 +39,21 @@ public class Digitacao : MonoBehaviour {
 	}
 	void Start () {
 		posicao = 0;
-        PauseGamePanel = GameObject.FindGameObjectWithTag("PAUSA");
-        HowToPanel = GameObject.FindGameObjectWithTag("HowTo");
-        palavraObjeto.text = p.RetornaPalavra(s.sanidade);
+
+        palavraObjeto.text = p.RetornaPalavra(Sanidade.sanidade);
 		palavra = palavraObjeto.text;
 
         nave = GameObject.FindGameObjectWithTag("Player");
 
-        palavraObjeto.text = p.RetornaPalavra(s.sanidade);
+        palavraObjeto.text = p.RetornaPalavra(Sanidade.sanidade);
         palavra = palavraObjeto.text;
 
-        Invoke("LateStart", 0.01f);
+       
 
     }
 
 
-    private void LateStart()
-    {
-        if(PauseGamePanel != null)
-            PauseGamePanel.SetActive(false);
-    }
+    
 
     void Update()
     {
@@ -64,16 +62,12 @@ public class Digitacao : MonoBehaviour {
             return;
         }
 
-        if (Input.anyKeyDown)
+		if (Input.anyKeyDown && !CaracteristicasDoJogo.morto)
         {
             string entrada = Input.inputString.ToUpper();
             
-            if (Input.GetKeyDown("escape"))
-            {
-                Debug.Log("ESC APERTADO");
-                menuPausa();
-            }
-            else if (entrada.Equals(palavra[posicao].ToString()))
+            
+            if (entrada.Equals(palavra[posicao].ToString()))
             {
                 if (posicao == 0 && !f.possuiFoco)
                 {
@@ -105,57 +99,36 @@ public class Digitacao : MonoBehaviour {
     void liberarFoco(){
 		f.possuiFoco = false;
 		foco = false;
-        cj.atualizarPontuacao(palavra.Length * 100);
-		if (s.sanidade < 100) {
-			s.sanidade += 15;
+		if (CaracteristicasDoJogo.modoRuim) {
+			Sanidade.sanidade -= 5 + CaracteristicasDoJogo.wave*5; //5 OU 10
+			cj.atualizarPontuacao(palavra.Length * 100);
 
 		} else {
-			s.sanidade += 15;
+			Sanidade.sanidade += 30;
+			cj.atualizarPontuacao(palavra.Length * 10);
 		}
 
-		s.sanidadeTexto.text = "sanity" + s.sanidade;
+		s.sanidadeTexto.text = "sanity" + Sanidade.sanidade;
 		GeradorDeInimigos.totalAtual--;
-		gi.iniciarWave (s.sanidade);
-		som.PlayOneShot (somInimigo);
-        Destroy (this.gameObject);
-	}
+        
+        gi.iniciarWave ();
+        Destroy(this.gameObject);
+        sourceExplosao.PlayOneShot(clipExplosao);
+        StartCoroutine("waitFourSecunds");
 
-    public void menuPausa(){
-        if (PauseGamePanel.active) 
-            desativaMenuPausa();
-
-        else
-            ativaMenuPausa();
     }
 
-    public void ativaMenuPausa()
+    IEnumerator waitFourSecunds()
     {
-        PauseGamePanel.SetActive(true);
-        invulneravel();
-        CaracteristicasDoJogo.jogoPausado = true;
+        yield return new WaitForSeconds(2);
+        
+
     }
-
-    public void desativaMenuPausa()
-    {
-        PauseGamePanel.SetActive(false);
-        HowToPanel.SetActive(false);
-        vulneravel();
-        CaracteristicasDoJogo.jogoPausado = false;
-    }
-
-
-    public void vulneravel()
-    {
-        nave.GetComponent<Collider2D>().enabled = true;
-        nave.GetComponent<SpriteRenderer>().color = Color.white;
-    }
-
-    public void invulneravel()
-    {
-        nave.GetComponent<Collider2D>().enabled = false;
-        nave.GetComponent<SpriteRenderer>().color = Color.red;
-    }
-
 
 }
+
+
+
+
+
 

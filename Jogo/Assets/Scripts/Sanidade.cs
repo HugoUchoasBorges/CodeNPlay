@@ -6,7 +6,7 @@ public class Sanidade : MonoBehaviour
 {
 
     public Text sanidadeTexto;
-    public int sanidade;
+    public static int sanidade;
     // Use this for initialization
 
     string[] insanidades = {
@@ -19,7 +19,7 @@ public class Sanidade : MonoBehaviour
 
     void Start()
     {
-        sanidade = 50;
+        sanidade = 150;
         sanidadeTexto.text = "   sanity: " + sanidade;
         InvokeRepeating("sanidadeTempo1", 2f, 3f);
         InvokeRepeating("sanidadeTempo2", 6f, 3f);
@@ -36,26 +36,26 @@ public class Sanidade : MonoBehaviour
         if (CaracteristicasDoJogo.jogoPausado)
             return;
         
-        sanidade--;
-        sanidadeTexto.text = "in.sanity: " + sanidade;
+		if (CaracteristicasDoJogo.modoRuim) {
+			sanidade++;
+		} else {
+			sanidade--;
+		}
 
-        Invoke("LateStart", 0.01f);
-
-    }
-
-    void LateStart()
-    {
+		sanidadeTexto.text = "in.sanity: " + sanidade;
 
     }
 
     void sanidadeTempo2()
     {
-        if (CaracteristicasDoJogo.jogoPausado)
+		if (CaracteristicasDoJogo.jogoPausado || !CaracteristicasDoJogo.modoRuim)
             return;
-
-        int n = Random.Range(0, 5);
-        sanidade -= n;
-
+		
+		int n = Random.Range(0, 5);
+		if (sanidade > 50) {
+			sanidade += n;
+		} 
+        
         sanidadeTexto.text = insanidades[n] + sanidade;
     }
 }

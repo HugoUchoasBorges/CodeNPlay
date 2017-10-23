@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Menu Principal.unity
     guid: 1d39eb259f9462640a3793e9459d16ae
   - enabled: 1
-    path: Assets/Cena1.unity
-    guid: 89d066f995c7dea49b61924c4ade9270
-  - enabled: 1
     path: Assets/HowToPlay.unity
     guid: 3b0f6800e7d2f754f9318094e09be1e0
+  - enabled: 1
+    path: Assets/Cena1.unity
+    guid: 89d066f995c7dea49b61924c4ade9270
