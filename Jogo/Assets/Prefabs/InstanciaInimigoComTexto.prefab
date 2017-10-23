@@ -55,6 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4757544690209574}
+  - component: {fileID: 114782106578992034}
   m_Layer: 0
   m_Name: InstanciaInimigoComTexto
   m_TagString: Untagged
@@ -92,6 +93,7 @@ GameObject:
   - component: {fileID: 58997387446461320}
   - component: {fileID: 50969517791936182}
   - component: {fileID: 114099511520176638}
+  - component: {fileID: 82262044239900770}
   m_Layer: 0
   m_Name: Inimigo
   m_TagString: Untagged
@@ -105,8 +107,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1436164205858426}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7496395, y: 0.5090389, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.214642, y: 5.4029746, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224215871964552674}
@@ -176,6 +178,86 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.59341204
+--- !u!82 &82262044239900770
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784528531642434}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9de93ad33c0c8534cb6277e087eb43c2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95112342019069960
 Animator:
   serializedVersion: 3
@@ -245,6 +327,7 @@ MonoBehaviour:
   palavra: 
   pontuacao: 0
   impulsoMaximo: 100
+  impulsoMinimo: 0
   rotacaoMaxima: 100
   rigidBody2D: {fileID: 50969517791936182}
   topoDaTela: 0
@@ -296,6 +379,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformInimigo: {fileID: 4877394292560884}
+--- !u!114 &114782106578992034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436164205858426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cca5805a43ad8044be78e5457a5c8c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  palavraObjeto: {fileID: 114286311927133954}
+  palavra: 
+  posicao: 0
+  foco: 0
+  f: {fileID: 0}
+  s: {fileID: 0}
+  gi: {fileID: 0}
+  sourceExplosao: {fileID: 82262044239900770}
+  clipExplosao: {fileID: 8300000, guid: 9de93ad33c0c8534cb6277e087eb43c2, type: 3}
+  p: {fileID: 0}
+  nave: {fileID: 1595418188597014, guid: ab7617b1cd1c8fd408b293a72ea64bd6, type: 2}
 --- !u!114 &114804571914039536
 MonoBehaviour:
   m_ObjectHideFlags: 1

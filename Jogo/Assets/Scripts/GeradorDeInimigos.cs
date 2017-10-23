@@ -16,13 +16,15 @@ public class GeradorDeInimigos : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		totalInimigos = 8;
+		totalInimigos = 5;
 		totalAtual = totalInimigos;
         //transicaoWave();
-        InstanciarInimigos(totalInimigos);
+        
 
         waveAtual = 1;
 
+        //transicaoWave();
+        InstanciarInimigos(totalInimigos);
         painel = GameObject.FindGameObjectWithTag("WAVE");
 
         Invoke("LateStart", 0.1f);
@@ -49,20 +51,23 @@ public class GeradorDeInimigos : MonoBehaviour {
 
 	}
 
-	public void iniciarWave(int sanidade) {
-		if (sanidade > 100) {
-			CaracteristicasDoJogo.estadoJogo = 1;
-		} else {
-			CaracteristicasDoJogo.estadoJogo = 0;
-		}
-			
-
+	public void iniciarWave() {
 		if (totalAtual == 0) {
-            waveAtual++;
-            transicaoWave();
-			totalInimigos += 3;
-			totalAtual = totalInimigos;
-		}
+			CaracteristicasDoJogo.wave++;
+			if (Sanidade.sanidade > 50) {
+				CaracteristicasDoJogo.modoRuim = true;
+			} else {
+				CaracteristicasDoJogo.modoRuim = false;
+			}
+		if (CaracteristicasDoJogo.modoRuim) {
+				totalInimigos += 2;
+				totalAtual = totalInimigos;
+				InstanciarInimigos (totalInimigos);
+			} else {
+				totalAtual = 5;
+				InstanciarInimigos (5);
+			}
+	}
 	}
 
     public void transicaoWave()
@@ -78,6 +83,8 @@ public class GeradorDeInimigos : MonoBehaviour {
         
 
         Invoke("painelTransicao", 4);
+
+	iniciarWave ();
     }
 
     public void painelTransicao()

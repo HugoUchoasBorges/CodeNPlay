@@ -16,12 +16,22 @@ public class Nave : MonoBehaviour {
     public static float bordaEsquerdaDaTela;
     public static float bordaDireitaDaTela;
 
-    public bool morto;
-
     public Color corInvencibilidade;
     public Color corNormal;
 
     public GameObject game_over_panel;
+
+    public AudioSource sourceAmbiente;
+    public AudioSource sourceNaveExplode;
+    public AudioSource sourceGameOver;
+    public AudioClip clipExplode;
+    public AudioClip clipFundo;
+    public AudioClip clipGameOver;
+
+    public AudioSource sourceSelect;
+    public AudioClip clipSelect;
+
+
 
     // Use this for initialization
     void Start() {
@@ -32,8 +42,8 @@ public class Nave : MonoBehaviour {
         baseDaTela = -6.18f;
         bordaEsquerdaDaTela = -10.67f;
         bordaDireitaDaTela = 10.67f;
-        impulso = 300;
-        impulsoDeRotacao = 300;
+        impulso = 400;
+        impulsoDeRotacao = 350;
 
         rigidBody2D.angularDrag = 0.8f;
         rigidBody2D.drag = 0.3f;
@@ -89,8 +99,9 @@ public class Nave : MonoBehaviour {
         renderizadorDeSprite.enabled = true;
         renderizadorDeSprite.color = corInvencibilidade;
 
+		CaracteristicasDoJogo.morto = false;
+		Debug.Log ("reviver: + " + CaracteristicasDoJogo.morto);
         Invoke("vulneravel", 3f);
-        morto = false;
     }
 
     public void vulneravel()
@@ -119,34 +130,37 @@ public class Nave : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
+		if (CaracteristicasDoJogo.modoRuim) {
+			CaracteristicasDoJogo.morto = true;			
+			CaracteristicasDoJogo.totalVidas--;
+			Debug.Log (CaracteristicasDoJogo.totalVidas);
 
-        /*lives--;
-        lives_text.text = "Lives: " + lives;
-        if (lives <= 0)
-        {
-            GameOver();
-        }*/
+			GetComponent<SpriteRenderer> ().enabled = false;
+			GetComponent<Collider2D> ().enabled = false;
 
-        CaracteristicasDoJogo.totalVidas--;
+			Invoke ("reviver", 2f);
+			if (CaracteristicasDoJogo.totalVidas <= 0) {
+                sourceAmbiente.Stop();
+                fimDeJogo();
+                StartCoroutine("waitFourSecunds");
+                sourceGameOver.Play();
+            }
+		}
 
-        GetComponent<SpriteRenderer>().enabled = false;
-        GetComponent<Collider2D>().enabled = false;
-        
-
-        Invoke("reviver", 2f);
-        if (CaracteristicasDoJogo.totalVidas <= 0)
-        {
-            morto = true;
-            fimDeJogo();
-        }
-        
+		Debug.Log ("Collision + " + CaracteristicasDoJogo.morto);
     }
 
     void fimDeJogo()
     {
+        sourceSelect.PlayOneShot(clipSelect);
         CancelInvoke("reviver");
         game_over_panel.SetActive(true);
         //Debug.Log("JOGADOR MORREU  !!! ");
+    }
+
+    IEnumerator waitFourSecunds()
+    {
+        yield return new WaitForSeconds(1);
     }
 
 }

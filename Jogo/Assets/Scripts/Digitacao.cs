@@ -15,12 +15,14 @@ public class Digitacao : MonoBehaviour {
 	public GeradorDeInimigos gi;
 	bool destruiu;
 
+    public AudioSource sourceExplosao;
+    public AudioClip clipExplosao;
 
 
-	public Palavras p;
+    public Palavras p;
 
-	public AudioSource som;
-    public AudioClip somInimigo;
+	//public AudioSource som;
+   // public AudioClip somInimigo;
     
 
     public GameObject nave;
@@ -37,13 +39,13 @@ public class Digitacao : MonoBehaviour {
 	}
 	void Start () {
 		posicao = 0;
-            
-        palavraObjeto.text = p.RetornaPalavra(s.sanidade);
+
+        palavraObjeto.text = p.RetornaPalavra(Sanidade.sanidade);
 		palavra = palavraObjeto.text;
 
         nave = GameObject.FindGameObjectWithTag("Player");
 
-        palavraObjeto.text = p.RetornaPalavra(s.sanidade);
+        palavraObjeto.text = p.RetornaPalavra(Sanidade.sanidade);
         palavra = palavraObjeto.text;
 
        
@@ -60,7 +62,7 @@ public class Digitacao : MonoBehaviour {
             return;
         }
 
-        if (Input.anyKeyDown)
+		if (Input.anyKeyDown && !CaracteristicasDoJogo.morto)
         {
             string entrada = Input.inputString.ToUpper();
             
@@ -97,20 +99,36 @@ public class Digitacao : MonoBehaviour {
     void liberarFoco(){
 		f.possuiFoco = false;
 		foco = false;
-        cj.atualizarPontuacao(palavra.Length * 100);
-		if (s.sanidade < 100) {
-			s.sanidade += 15;
+		if (CaracteristicasDoJogo.modoRuim) {
+			Sanidade.sanidade -= 5 + CaracteristicasDoJogo.wave*5; //5 OU 10
+			cj.atualizarPontuacao(palavra.Length * 100);
 
 		} else {
-			s.sanidade += 15;
+			Sanidade.sanidade += 30;
+			cj.atualizarPontuacao(palavra.Length * 10);
 		}
 
-		s.sanidadeTexto.text = "sanity" + s.sanidade;
+		s.sanidadeTexto.text = "sanity" + Sanidade.sanidade;
 		GeradorDeInimigos.totalAtual--;
-		gi.iniciarWave (s.sanidade);
-		som.PlayOneShot (somInimigo);
-        Destroy (this.gameObject);
-	}
+        
+        gi.iniciarWave ();
+        Destroy(this.gameObject);
+        sourceExplosao.PlayOneShot(clipExplosao);
+        StartCoroutine("waitFourSecunds");
+
+    }
+
+    IEnumerator waitFourSecunds()
+    {
+        yield return new WaitForSeconds(2);
+        
+
+    }
 
 }
+
+
+
+
+
 

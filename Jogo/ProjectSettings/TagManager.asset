@@ -8,6 +8,7 @@ TagManager:
   - PAUSA
   - HowTo
   - WAVE
+  - FINAL
   layers:
   - Default
   - TransparentFX
